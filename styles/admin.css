@@ -1,0 +1,145 @@
+@import url("./common.css");
+
+.admin-panel {
+    padding: 2rem;
+    background-color: var(--background-primary);
+}
+
+.admin-welcome {
+    margin-bottom: 2rem;
+}
+
+.admin-welcome h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Admin Actions */
+.admin-actions .btn-primary {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: var(--header-text);
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-actions .btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.admin-actions .btn-primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.admin-actions .btn-primary:hover::after {
+    opacity: 1;
+}
+
+/* Admin Table */
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--background-secondary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.admin-table:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.admin-table th,
+.admin-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--background-primary);
+    transition: background 0.3s ease-in-out;
+}
+
+.admin-table th {
+    background-color: var(--primary);
+    color: var(--header-text);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.admin-table tr:hover {
+    background-color: rgba(108, 91, 123, 0.1);
+}
+
+.admin-table td {
+    color: var(--text);
+}
+
+.admin-table td img {
+    width: 80px;
+    height: auto;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease-in-out;
+}
+
+.admin-table td img:hover {
+    transform: scale(1.1);
+}
+
+/* Edit & Delete Buttons */
+.admin-table .btn-edit,
+.admin-table .btn-delete {
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-table .btn-edit {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: var(--header-text);
+}
+
+.admin-table .btn-delete {
+    background: linear-gradient(45deg, #FF6B6B, var(--secondary));
+    color: var(--header-text);
+}
+
+.admin-table .btn-edit:hover,
+.admin-table .btn-delete:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Table */
+@media screen and (max-width: 768px) {
+    .admin-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .admin-table th,
+    .admin-table td {
+        padding: 0.75rem;
+        white-space: nowrap;
+    }
+}

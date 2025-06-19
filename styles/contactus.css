@@ -1,0 +1,191 @@
+@import url("./common.css");
+
+/* Contact Us Styling */
+#contact .contact-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+    padding: 2rem 0;
+}
+#contact .logo .forContact{position: "sticky";}
+#contact .contact-info .box {
+    text-align: center;
+    background: var(--background-secondary);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+#contact .contact-info .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, var(--primary-a), var(--secondary-a));
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+#contact .contact-info .box:hover::before {
+    opacity: 0.1;
+}
+
+#contact .contact-info .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+#contact .contact-info .box i {
+    padding-bottom: 1rem;
+    color: var(--accent);
+    font-size: 2rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+#contact .contact-info .box:hover i {
+    transform: scale(1.1);
+}
+
+#contact .contact-info .box h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+#contact .contact-info .box p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+/* Form Styling */
+.form-n-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--background-secondary);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.form-n-map:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form {
+    width: 100%;
+    max-width: 600px;
+    padding: 1.5rem;
+}
+
+.contact-form h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form .form-group label {
+    display: block;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.contact-form form .form-group label:hover {
+    color: var(--accent);
+}
+
+.contact-form form .form-group input,
+.contact-form form .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--primary-a);
+    background-color: var(--background-primary);
+    color: var(--text);
+    transition: all 0.3s ease-in-out;
+}
+
+.contact-form form .form-group input:focus,
+.contact-form form .form-group textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.contact-form form input[type="submit"] {
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    color: var(--header-text);
+    font-weight: 500;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form form input[type="submit"]::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.contact-form form input[type="submit"]:hover::after {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-form form input[type="submit"]:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Google Map Styling */
+#map {
+    width: 100%;
+    height: 400px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 976px) {
+    #contact .contact-info {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .form-n-map {
+        flex-direction: column;
+        padding: 1.5rem;
+    }
+
+    .contact-form {
+        width: 100%;
+    }
+
+    #map {
+        margin-top: 1.5rem;
+    }
+}

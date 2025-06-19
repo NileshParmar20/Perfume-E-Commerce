@@ -1,0 +1,104 @@
+@import url("./common.css");
+
+/* Centering Container */
+.f-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-primary);
+    padding: 20px;
+}
+
+/* Register Box */
+.register {
+    background: var(--background-secondary);
+    display: flex;
+    align-items: center;
+    width: 800px;
+    max-width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.register:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Section */
+.register .pic {
+    flex: 1;
+    background: url('../images/register-img.jpg') no-repeat center center/cover;
+    height: 100%;
+    min-height: 775px;
+}
+
+/* Form Section */
+.register .form-wrap {
+    flex: 1;
+    padding: 2rem;
+    text-align: center;
+}
+
+.register .l-heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.register .form-wrap form {
+    width: 100%;
+}
+
+.register .form-wrap form .form-group {
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.register .form-wrap form .form-group input {
+    border: 1px solid var(--primary-a);
+    background-color: var(--background-primary);
+    color: var(--text);
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.register .form-wrap form .form-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+/* Button Styling */
+.register .form-wrap form button {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background 0.3s ease-in-out;
+}
+
+.register .form-wrap form button:hover {
+    background: var(--primary-a);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .register {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .register .pic {
+        height: 200px;
+    }
+}
